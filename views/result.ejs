@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-side">
+          <div class="weather-gradient"></div>
+          <div class="date-container">
+            <h5 class="date-day"><%= date %></h5><i class="location-icon" data-feather="map-pin"></i><span class="location"><%= data.name %></span>
+          </div>
+          <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+            <img src="http://openweathermap.org/img/wn/<%= data.weather[0].icon %>.png" alt="" class="icon-image">
+            <h1 class="weather-temp"><%= data.main.temp %>°C</h1>
+            <h3 class="weather-desc"><%= data.weather[0].description %></h3>
+          </div>
+        </div>
+        <div class="info-side">
+          <div class="today-info-container">
+            <div class="today-info">
+              <div class="precipitation"> <span class="title">PRESSURE</span><span class="value"> <%= data.main.pressure %></span>
+                <div class="clear"></div>
+              </div>
+              <div class="humidity"> <span class="title">HUMIDITY</span><span class="value"><%= data.main.humidity %> %</span>
+                <div class="clear"></div>
+              </div>
+              <div class="wind"> <span class="title">WIND</span><span class="value"><%= data.wind.speed %> km/h</span>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+          <div class="week-container">
+            <ul class="week-list">
+              <li><i class="day-icon" data-feather="sun"></i><span class="day-name">T mint</span><span class="day-temp"><%= data.main.temp_min %>°C</span></li>
+              <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">T max</span><span class="day-temp"><%= data.main.temp_max %>°C</span></li>
+              <div class="clear"></div>
+            </ul>
+          </div>
+          <div class="location-container">
+            <a href="/" class="location-button"> <i data-feather="map-pin"></i><span>Change location</span></a>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
